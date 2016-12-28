@@ -140,8 +140,9 @@ Java_com_potterhsu_rtsplibrary_RtspClient_play(
     av_read_pause(context);
     avio_close(oc->pb);
     avformat_free_context(oc);
+    avformat_close_input(&context);
 
-    return JNI_OK;
+    return isStop ? JNI_OK : JNI_ERR;
 }
 
 extern "C"

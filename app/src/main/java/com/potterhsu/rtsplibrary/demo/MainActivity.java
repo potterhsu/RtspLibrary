@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -74,7 +73,23 @@ public class MainActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                rtspClient.play(endpoint);
+                while (true) {
+                    if (rtspClient.play(endpoint) == 0)
+                        break;
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Connection error, retry after 3 seconds", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }).start();
     }

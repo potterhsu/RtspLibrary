@@ -18,6 +18,12 @@ public class RtspClient {
     }
 
     private native int initialize(NativeCallback callback);
+
+    /**
+     * Play stream synchronously.
+     * @param endpoint resource endpoint
+     * @return 0 if exit normally or -1 otherwise
+     */
     public native int play(String endpoint);
     public native void stop();
     public native void dispose();
