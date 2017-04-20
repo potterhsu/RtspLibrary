@@ -9,8 +9,6 @@ Android library based on FFMpeg for playing given RTSP endpoint.
 5. Invoke Callback
 6. Java Interface
 
-|--------------------------------------- JNI + FFMpeg ---------------------------------------|
-
 ## Setup
 1.  In root build.gradle:
   ```
