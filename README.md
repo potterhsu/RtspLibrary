@@ -10,7 +10,7 @@ Android library based on FFMpeg for playing given RTSP endpoint.
 6. Java Interface
 
 ## Setup
-1.  In root build.gradle:
+1.  In root `build.gradle`:
   ```
   allprojects {
     repositories {
@@ -20,10 +20,10 @@ Android library based on FFMpeg for playing given RTSP endpoint.
   }
   ````
 
-2.  In target module build.gradle
+2.  In target module `build.gradle`
   ```
   dependencies {
-    compile 'com.github.potterhsu:RtspLibrary:1.0'
+    compile 'com.github.potterhsu:RtspLibrary:v1.0'
   }
   ```
 
