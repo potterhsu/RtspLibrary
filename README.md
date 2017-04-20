@@ -62,7 +62,7 @@ Android library based on FFMpeg for playing given RTSP endpoint.
   new Thread(new Runnable() {
       @Override
       public void run() {
-          rtspClient.play("");
+          rtspClient.play("rtsp://endpoint/to/rtsp");
       }
   }).start();
   ```
