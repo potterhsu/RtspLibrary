@@ -3,8 +3,8 @@ Android library based on FFMpeg for playing given RTSP endpoint.
 
 ## Pipeline
 Open RTSP Endpoint --> Find Video Stream --> Read Frame --> Convert to RGB --> Invoke Callback --> Java Interface
-|                                                                                             |
-|_____________________________________ JNI + FFMpeg __________________________________________|
+
+|--------------------------------------- JNI + FFMpeg ---------------------------------------|
 
 ## Setup
 1.  In root build.gradle:
